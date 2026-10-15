@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0f">
+  <meta name="description" content="İmzalı_Öfke — oyunlarım, videolarım ve projelerim.">
+  <title>İmzalı_Öfke | Oyun & Video</title>
+  <style>
+    :root{--bg:#09090d;--panel:#121218;--panel2:#191920;--text:#f5f5f7;--muted:#a5a5b1;--red:#f04444;--red2:#a80e20;--line:#2b2025}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,#321016 0,transparent 36%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:5;background:#09090de8;backdrop-filter:blur(14px);border-bottom:1px solid #282027}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.2px}
+    .logo{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#ff4d58,#a10b20);box-shadow:0 0 28px #f0444433;font-size:21px}
+    .brand span:last-child{font-size:18px}
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}
+    .navlinks a:hover{color:white}
+    .hero{padding:82px 0 58px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:38px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#ff7b83;background:#351117;border:1px solid #5a2029;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-3px;margin:20px 0}
+    h1 em{font-style:normal;color:var(--red)}
+    .lead{color:var(--muted);font-size:17px;line-height:1.75;max-width:580px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:12px;font-weight:800;font-size:14px;border:1px solid #3a3034}
+    .btn.primary{background:linear-gradient(135deg,#f04444,#bd1730);border-color:#f04444;color:#fff;box-shadow:0 10px 30px #f0444424}
+    .btn.secondary{background:#17171e;color:#eee}
+    .feature{min-height:290px;border:1px solid #44252c;border-radius:24px;background:linear-gradient(145deg,#241116,#111117 70%);padding:24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .feature:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-65px;top:-60px;background:#e72f4320;filter:blur(4px)}
+    .feature-icon{font-size:64px;filter:drop-shadow(0 8px 18px #f0444430)}
+    .feature small{color:#ff9ca2;text-transform:uppercase;letter-spacing:2px;font-weight:800}
+    .feature h2{font-size:27px;margin:8px 0}
+    .feature p{color:var(--muted);line-height:1.6;margin:0}
+    section{padding:34px 0 48px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}
+    .section-head h2{font-size:30px;margin:0 0 7px;letter-spacing:-.7px}
+    .section-head p{margin:0;color:var(--muted);font-size:14px}
+    .tag{color:#ff7b83;font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{background:linear-gradient(145deg,#17171e,#101015);border:1px solid #2c252a;border-radius:18px;padding:22px;min-height:190px;display:flex;flex-direction:column;align-items:flex-start}
+    .card:hover{border-color:#79303a;transform:translateY(-2px);transition:.18s ease}
+    .card-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#351117;color:#ff777f;font-size:25px;margin-bottom:18px}
+    .card h3{margin:0 0 8px;font-size:20px}
+    .card p{margin:0 0 18px;color:var(--muted);line-height:1.6;font-size:14px}
+    .card .link{margin-top:auto;color:#ff747e;font-weight:800;font-size:13px}
+    .video-placeholder{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#231116,#191920);border:1px solid #3c252b;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;color:#ff777f;font-size:40px}
+    .note{border:1px dashed #493038;background:#130f13;padding:16px;border-radius:14px;color:#c4b9be;font-size:13px;line-height:1.7;margin-top:18px}
+    footer{margin-top:24px;border-top:1px solid #292329;padding:26px 0 34px;color:#8e8e9a;font-size:13px}
+    footer .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:52px}.feature{min-height:230px}.grid{grid-template-columns:1fr}.navlinks{gap:12px;font-size:12px}.brand span:last-child{font-size:15px}h1{letter-spacing:-2px}.section-head h2{font-size:26px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top" aria-label="İmzalı_Öfke ana sayfa"><span class="logo">İÖ</span><span>İmzalı_Öfke</span></a>
+    <div class="navlinks"><a href="#oyunlarim">Oyunlarım</a><a href="#videolarim">Videolarım</a></div>
+  </nav>
+</header>
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">● Kendi dünyam, kendi kurallarım</span>
+      <h1>Oyna. İzle.<br><em>İz bırak.</em></h1>
+      <p class="lead">İmzalı_Öfke'ye hoş geldin! Oyun projelerimi, geliştirme çalışmalarımı ve videolarımı burada bulabilirsin.</p>
+      <div class="actions"><a class="btn primary" href="#oyunlarim">🎮 Oyunları keşfet</a><a class="btn secondary" href="#videolarim">▶ Videolara göz at</a></div>
+    </div>
+    <aside class="feature">
+      <div><small>Öne çıkan proje</small><div class="feature-icon">🚙</div></div>
+      <div><h2>ATABA Yol Macerası 3D</h2><p>Yolculuk, keşif ve yeni geliştirmeler. Oyunun ayrı projesi burada bağlantı olarak yer alıyor.</p></div>
+    </aside>
+  </div>
+  <section class="wrap" id="oyunlarim">
+    <div class="section-head"><div><span class="tag">01 / Oyunlar</span><h2>Oyunlarım</h2><p>Geliştirdiğim oyunlara buradan ulaş.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="card-icon">🚙</div><h3>ATABA Yol Macerası 3D</h3><p>3D oyun projesi ve geliştirme süreci. Bu bağlantı mevcut GitHub projenin sayfasını açar.</p><a class="link" href="https://github.com/s4158558-web/ATABA-3D-Prototip" target="_blank" rel="noopener noreferrer">Projeyi GitHub'da aç ↗</a></article>
+      <article class="card"><div class="card-icon">🕹️</div><h3>Yeni oyunlar yolda</h3><p>Yeni oyunlarını hazırladıkça bu kartı güncelleyip oyunun bağlantısını ekleyebilirsin.</p><span class="link">Yakında eklenecek</span></article>
+    </div>
+    <div class="note"><strong>Not:</strong> Bu sayfa şimdilik ATABA projesine bağlantı verir; oyunu bu sayfanın içinde çalıştırmaz. İleride oyunun web sürümü hazır ve yayımlanmış olursa ayrıca gömme seçeneği eklenebilir.</div>
+  </section>
+  <section class="wrap" id="videolarim">
+    <div class="section-head"><div><span class="tag">02 / Videolar</span><h2>Videolarım</h2><p>Videolarını ve kanalını burada sergile.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="video-placeholder">▶</div><h3>Son videom</h3><p>Buraya YouTube video bağlantını ekleyebilir veya videonu bu kartın içinde oynatılacak şekilde gömebilirsin.</p><a class="link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube'u aç ↗</a></article>
+      <article class="card"><div class="card-icon">📺</div><h3>Video arşivim</h3><p>Serilerini, oyun videolarını ve yeni içeriklerini tek bir yerde topla.</p><span class="link">Kanal bağlantısı eklenecek</span></article>
+    </div>
+    <div class="note">Videolarını eklemek için YouTube'daki videoyu açıp <strong>Paylaş → Yerleştir</strong> seçeneğinden verilen gömme kodunu kullanabiliriz. Henüz video bağlantısı verilmediği için örnek alanlar bırakıldı.</div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> İmzalı_Öfke</span><span>Oyunlarım · Videolarım · Kendi yolum</span></div></footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
